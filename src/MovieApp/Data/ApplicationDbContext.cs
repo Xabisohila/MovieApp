@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MovieApp.Models;
 
-namespace MovieApp.Data
+namespace MovieApp.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
