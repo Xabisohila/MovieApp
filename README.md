@@ -52,7 +52,7 @@ The system allows the customers to see which DVDs are available to rent and it c
 The system only allows customers to see which DVDs are available. It does not allow customers to rent a DVD.
 
 ![DVD Nouveau Screenshot](images/DVD_Nouveau_Screenshot.png)
-
+Figure 1. DVD Nouveau Screenshot (<http://www.dvdnouveau.co.za/movies.asp/>)
 
 ### 2.3.2 Blockbuster Entertainment
 
@@ -67,3 +67,4 @@ The system allows customers to see DVDs available in store. After customers have
 The system is only available in just five provinces and that means if I am living in the Eastern Cape I am not able to use the blockbuster system. Figure 2 is the Blockbusters Entertainment screenshot.
 
 ![Blockbusters Entertainment](/images/Blockbusters_Entertainment.png)
+Figure 2. Blockbusters Entertainment (<http://www.blockbusters.co.za/>)
