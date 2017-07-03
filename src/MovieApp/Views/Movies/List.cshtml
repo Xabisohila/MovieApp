@@ -1,0 +1,27 @@
+﻿@model IEnumerable<MovieApp.Models.Movie>
+
+@{ 
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies</h2>
+<p>
+    @Html.ActionLink("New Movie", "New", "Movie", null,new { @class = "btn btn-primary"})
+</p>
+<table id="movies" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Movies
+            </th>
+            <th>
+                Genre
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
