@@ -26,11 +26,11 @@ namespace MovieApp.Controllers
         }
         public ActionResult New()
         {
-            //var membershipTypes = _context.MembershipTypes.ToList();
+            var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new CustomerFormViewModel
             {
                 Customers = new Customer(),
-                // MembershipTypes = membershipTypes
+                MembershipTypes = membershipTypes
             };
             return View("CustomerForm", viewModel);
         }
@@ -63,12 +63,13 @@ namespace MovieApp.Controllers
 
         public ViewResult Index()
         {
-            return View();
+            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            return View(customers);
         }
 
         public ActionResult Details(int id)
         {
-            var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.ID == id);
+            var customer = _context.Customers.SingleOrDefault(c => c.ID == id);
             if (customer == null)
             {
                 return NotFound();

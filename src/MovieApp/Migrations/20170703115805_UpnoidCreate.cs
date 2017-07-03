@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace MovieApp.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class UpnoidCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

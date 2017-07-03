@@ -8,8 +8,8 @@ using MovieApp.Models;
 namespace MovieApp.Migrations
 {
     [DbContext(typeof(UpnoidContext))]
-    [Migration("20170702125143_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20170703115805_UpnoidCreate")]
+    partial class UpnoidCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
