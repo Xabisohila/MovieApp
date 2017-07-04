@@ -26,11 +26,11 @@ namespace MovieApp.Controllers
         }
         public ActionResult New()
         {
-            var membershipTypes = _context.MembershipTypes.ToList();
+            //var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new CustomerFormViewModel
             {
                 Customers = new Customer(),
-                MembershipTypes = membershipTypes
+                // MembershipTypes = membershipTypes
             };
             return View("CustomerForm", viewModel);
         }
@@ -43,7 +43,7 @@ namespace MovieApp.Controllers
                 var viewModel = new CustomerFormViewModel
                 {
                     Customers = customer,
-                    MembershipTypes = _context.MembershipTypes.ToList()
+                    //MembershipTypes = _context.MembershipTypes.ToList()
                 };
                 return View("CustomerForm", viewModel);
             }
@@ -52,19 +52,19 @@ namespace MovieApp.Controllers
             else
             {
                 var customerInDB = _context.Customers.Single(c => c.ID == customer.ID);
-                customerInDB.Name = customer.Name;
+                customerInDB.FullName = customer.FullName;
                 customerInDB.Birthdate = customer.Birthdate;
-                customerInDB.MembershipTypeId = customer.MembershipTypeId;
+                customerInDB.Email = customer.Email;
                 customerInDB.IsSubcribedToNewsletter = customerInDB.IsSubcribedToNewsletter;
             }
             _context.SaveChanges();
-            return RedirectToAction("Index", "Customers");
+            return RedirectToAction("Index", "Customer");
         }
 
         public ViewResult Index()
         {
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
-            return View(customers);
+            //var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            return View();
         }
 
         public ActionResult Details(int id)
@@ -86,7 +86,7 @@ namespace MovieApp.Controllers
             var viewmodel = new CustomerFormViewModel
             {
                 Customers = customer,
-                MembershipTypes = _context.MembershipTypes.ToList()
+               // MembershipTypes = _context.MembershipTypes.ToList()
             };
             return View("CustomerForm", viewmodel);
         }

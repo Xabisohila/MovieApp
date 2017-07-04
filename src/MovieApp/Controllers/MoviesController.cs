@@ -28,7 +28,9 @@ namespace MovieApp.Controllers
         
         public ViewResult Index()
         {
-            if (User.IsInRole(RoleName.CanManageMovies))
+            return View("List");
+
+           /* if (User.IsInRole(RoleName.CanManageMovies))
             {
                 return View("List");
             }
@@ -36,8 +38,9 @@ namespace MovieApp.Controllers
             {
                 return View("ReadOnlyList");
             }
+        */
         }
-        [Authorize(Roles = RoleName.CanManageMovies) ]
+        //[Authorize(Roles = RoleName.CanManageMovies) ]
         public ViewResult New()
         {
             var genres = _context.Genres.ToList();
@@ -49,7 +52,7 @@ namespace MovieApp.Controllers
             return View("MovieForm", viewModel);
         }
 
-        [Authorize(Roles =RoleName.CanManageMovies)]
+      //  [Authorize(Roles =RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
@@ -82,8 +85,8 @@ namespace MovieApp.Controllers
             var movie = new Movie() { name = "Fast and Furius" };
             var customers = new List<Customer>
             {
-                new Customer {Name="Philemon" },
-                new Customer {Name="Xabiso" }
+                new Customer {FullName="Philemon Hila" },
+                new Customer {FullName="Xabiso Hila" }
             };
 
             var viewModel = new RandomMovieViewModel
@@ -96,7 +99,7 @@ namespace MovieApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles =RoleName.CanManageMovies)]
+       // [Authorize(Roles =RoleName.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
             if (!ModelState.IsValid)

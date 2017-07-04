@@ -9,18 +9,17 @@
 {
     @Html.ValidationSummary(true, "Please fix the following errors.")
     <div class="form-group">
-        @Html.LabelFor(m => m.Customers.Name)
-        @Html.LabelFor(m => m.Customers.Name)
-        @Html.TextBoxFor(m => m.Customers.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Customers.Name)
+        @Html.LabelFor(m => m.Customers.FullName)
+        @Html.TextBoxFor(m => m.Customers.FullName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customers.FullName)
     </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.Customers.MembershipTypeId)
-            @Html.DropDownListFor(m => m.Customers.Birthdate, new SelectList(Model.MembershipTypes, "Id", "Name"), "", new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Customers.MembershipTypeId)
-        </div>
-        
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customers.Email)
+        @Html.TextBoxFor(m => m.Customers.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customers.Email)
+    </div>
+
     <div class="form-group">
         @Html.LabelFor(m => m.Customers.Birthdate)
         @Html.TextBoxFor(m => m.Customers.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })

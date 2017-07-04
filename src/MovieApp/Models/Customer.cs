@@ -8,14 +8,18 @@ namespace MovieApp.Models
         public int ID { get; set; }
 
         [Required]
-        [StringLength(50, ErrorMessage = "First name cannot be longer than 50 characters.")]
-        public string Name { get; set; }
+        [Display(Name = "Full name")]
+        [StringLength(20, ErrorMessage = "First name cannot be longer than 20 characters.")]
+        [MinLength(1, ErrorMessage ="First name cannot be a character.")]
+        public string FullName { get; set; }
 
         public bool IsSubcribedToNewsletter { get; set; }
 
-        public MembershipType MembershipType { get; set; }
-        [Display(Name = "MembershipType")]
-        public int MembershipTypeId { get; set; }
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Required]
         [Display(Name = "Date of Birth")]
         [Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }

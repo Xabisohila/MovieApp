@@ -7,7 +7,8 @@
 
 <h2>Movies</h2>
 <p>
-    @Html.ActionLink("New Movie", "New", "Movie", null,new { @class = "btn btn-primary"})
+  @*  @Html.ActionLink("New Movie", "New", "Movie", null,new { @class = "btn btn-primary"}) *@
+    <a asp-action ="New" asp-controller ="Movie" class="btn btn-primary">New Movie</a>
 </p>
 <table id="movies" class="table table-bordered table-hover">
     <thead>

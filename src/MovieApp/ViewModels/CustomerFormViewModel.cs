@@ -8,7 +8,7 @@ namespace MovieApp.ViewModels
 {
     public class CustomerFormViewModel
     {
-        public IEnumerable<MembershipType> MembershipTypes { get; set; }
+       // public IEnumerable<MembershipType> MembershipTypes { get; set; }
         public Customer Customers { get; set; }
     }
 }

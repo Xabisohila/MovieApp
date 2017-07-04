@@ -20,11 +20,17 @@ namespace MovieApp.Data
             }
 
             //Creating customers
-            var customers = new Customer[]
+            var customers = new Customer[]   
             {
-                new Customer {Name = "Hila, Xabiso"}, //start here tommorrow
-
+                new Customer {FullName = "Hila Xabiso", Email= "okxabisohila@gmail.com" },
+                new Customer {FullName="Moutzouris Yiota", Email="yiota.moutzouris@nmmu.ac.za" },
+                new Customer {FullName="Hila Sima", Email="sima@yahoo.com" }
             };
+            foreach (Customer cust in customers)
+            {
+                _context.Customers.Add(cust);
+            }
+            _context.SaveChanges();
         }
     }
 }
